@@ -88,7 +88,7 @@ def fourUniqueNum():
     xp = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
           28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
     # print('xp 的属性', type(xp), "开始有的牌\n", xp)
-    for i in range(0,12):
+    for i in range(0, 12):
         ssss = 1
         while ssss:
             numx1 = random.sample(xp, 4)
@@ -125,8 +125,6 @@ def fourUniqueNum():
 # #
 # print('speople', speople) # 输出 某人的 牌序号；
 
-speople = [[19, 20, 14, 3], [7, 41, 28, 17], [6, 11, 8, 34], [30, 16, 22, 44], [45, 36, 23, 12], [26, 4, 9, 29], [21, 25, 15, 2], [5, 33, 18, 35], [42, 38, 43, 31], [32, 39, 47, 27], [46, 37, 13, 24], [40, 10, 1, 0]]
-
 def extractionPoker(s4 = [], n = 2):
     '''
     根据组数， 分派
@@ -136,11 +134,11 @@ def extractionPoker(s4 = [], n = 2):
     '''
     # print(s4, '\n', n)
     # print("Poker ", sourceClub)
+    print('开始发牌========')
     while n:
         x = 'lue' + str(n)
         x = list(x)
         # print(x, type(x), '|', type(sourceClub))
-        print('开始发牌========')
         c1, c2, c3, c4 = s4[n]
         # print('元素%s'%(n), sourceClub[c1], sourceClub[c2], sourceClub[c3], sourceClub[c4])
         olo = [sourceClub[c1], sourceClub[c2], sourceClub[c3], sourceClub[c4]]
@@ -149,10 +147,6 @@ def extractionPoker(s4 = [], n = 2):
         n = n - 1
     pass
 
-extractionPoker(s4=speople)
-
-v1 = [('2', '方片', 'blackCover'), ('Q', '红桃', 'blackCover'), ('8', '黑桃', 'blackCover'), ('5', '红桃', 'blackCover')]
-v2 = [('2', '梅花', 'blackCover'), ('3', '方片', 'blackCover'), ('3', '黑桃', 'blackCover'), ('9', '梅花', 'blackCover')]
 def ContrastPoker(cd = [], cs = []):
     '''
     闲家 翻牌,庄家说 过.(过, 反)
@@ -170,17 +164,93 @@ def ContrastPoker(cd = [], cs = []):
 
     规则, 共四张,分两组, 左一组(大), 右一组(小);
 
-    :param cd:
-    :param cs:
+    :param cd: cd 庄家牌
+    :param cs: cs 闲家牌
     :return:
     '''
+    sktone = ['2', '3', '4', '5', '6', '7', '8', '9', 'J', 'Q', 'K', 'A']
+    sktoneTwo = ['2', '3', '4', '5', '6', '7', '8', '9', 'A']
+    sktoneThree = ['J', 'Q', 'K']
+    sktoneColor = ["黑桃", "红桃", "梅花", "方片"]
+
+    if cd[0][0] == cd[1][0]:
+
+        pass
+    else:
+        ''' 此组 大于10， 等于10 ， 小于10； 小于10【9 + sktoneThree【i】, 1 + 8 , 2 + 7 ...牌面一致比花色】 '''
+
+        pass
+
+    xs = 1
+
+
     pass
 
-def LockPlate():
+def LockPlate(x = []):
     '''
     锁牌, 锁牌后,不可换牌;
+    不可 换牌，  列表 格式转换为将 元组 ；  
     :return:
     '''
-
     pass
+
+
+def movedThePoker(k = [], xsign =(1, 3)):
+    klist = k
+    mvsign = xsign
+    print('\n移动前', klist, '\n被移动', klist[mvsign[0] - 1], '与', klist[mvsign[1] - 1])
+    x1 = klist[mvsign[0] - 1]
+    tmppoker = klist[mvsign[1] - 1]
+    x2 = x1
+    x1 = tmppoker
+
+    klist[mvsign[0] - 1] = x1
+    klist[mvsign[1] - 1] = x2
+    print("\n移动后", klist)
+    return klist
+
+def waterTheSky(k = []):
+    print('waterTheSky -->')
+    # print('牌1', k[0][0])
+    ssetlist = [k[0][0], k[1][0], k[2][0], k[3][0]]
+    # print('构建 set', set(ssetlist))
+    om = set(ssetlist)
+
+    ssetlistlen = len(om)
+    # print('ssetlistlen', ssetlistlen)
+    omm = list(om)
+
+    if ssetlistlen == 1:
+        print("水一天下")
+        return [k[0][0]]
+        pass
+    elif ssetlistlen == 2:
+        print("水一")
+        print('om', omm)
+
+        return omm
+    elif ssetlistlen == 3:
+        print("可 报1")
+        return k
+    else:
+        print(" 一般的 牌 ")
+        return k
+
+if __name__ == "__main__":
+    speople = [[19, 20, 14, 3], [7, 41, 28, 17], [6, 11, 8, 34], [30, 16, 22, 44], [45, 36, 23, 12], [26, 4, 9, 29],
+               [21, 25, 15, 2], [5, 33, 18, 35], [42, 38, 43, 31], [32, 39, 47, 27], [46, 37, 13, 24], [40, 10, 1, 0]]
+
+    extractionPoker(s4=speople)
+    print(" 华丽的分割线 ")
+    v1 = [('2', '方片', 'blackCover'), ('Q', '红桃', 'blackCover'), ('8', '黑桃', 'blackCover'), ('5', '红桃', 'blackCover')]
+    v2 = [('2', '梅花', 'blackCover'), ('3', '方片', 'blackCover'), ('3', '黑桃', 'blackCover'), ('9', '梅花', 'blackCover')]
+    v3 = [('2', '梅花', 'blackCover'), ('3', '方片', 'blackCover'), ('3', '黑桃', 'blackCover'), ('2', '红桃', 'blackCover')]
+    v4 = [('2', '梅花', 'blackCover'), ('2', '方片', 'blackCover'), ('2', '黑桃', 'blackCover'), ('2', '红桃', 'blackCover')]
+
+    print("牌1 ", v1)
+    print("牌2 ", v2)
+
+    movedThePoker(k=v2, xsign=(1, 3))
+
+    waterTheSky(k=v3)
 
