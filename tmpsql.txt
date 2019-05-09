@@ -1,0 +1,10 @@
+
+
+select a.client_id, a.client_no, a.fax_number , a.filing_date, a.client_identity_id, a.client_name,a.is_open_account, a.contacts  from otc_client_info as a;
+
+
+select * from otc_client_other_info as b;
+
+
+select client_id,client_no ,client_type ,filing_date ,client_identity_id ,client_name,phone_number,address ,is_open_account,sale_department_no ,agent ,email from otc_client_info as c ;
+

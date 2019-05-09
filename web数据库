@@ -1,0 +1,79 @@
+
+MariaDB [(none)]> use nanhuacapital_web_otc_simulation;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [nanhuacapital_web_otc_simulation]> show tables;
++--------------------------------------------+
+| Tables_in_nanhuacapital_web_otc_simulation |
++--------------------------------------------+
+| t_equities_bargain                         |
+| t_equities_config                          |
+| t_equities_enquiry                         |
+| t_equities_enquiry_quote_corr              |
+| t_equities_enquiry_quote_order             |
+| t_equities_enquiry_quote_pair_corr         |
+| t_equities_expiring_date_negotiate         |
+| t_equities_quote                           |
+| t_otc_asia_average_contract_info           |
+| t_otc_asia_sample_contract_info            |
+| t_otc_client                               |
+| t_otc_client_action_log                    |
+| t_otc_client_bind                          |
+| t_otc_client_bind_account_inner            |
+| t_otc_client_bind_email                    |
+| t_otc_client_login_log                     |
+| t_otc_client_options_order_log             |
+| t_otc_client_regist_log                    |
+| t_otc_controller_system_log                |
+| t_otc_exchange                             |
+| t_otc_exchange_product                     |
+| t_otc_festival_config                      |
+| t_otc_history_trade_info_total             |
+| t_otc_options_contract_inner               |
+| t_otc_options_order_inner                  |
+| t_otc_options_trade_inner                  |
+| t_otc_order_corre_contract_inner           |
+| t_otc_permission                           |
+| t_otc_product                              |
+| t_otc_role                                 |
+| t_otc_role_permission                      |
+| t_otc_trade_time_config                    |
+| t_otc_user                                 |
+| t_otc_user_action_log                      |
+| t_otc_user_area_permission                 |
+| t_otc_user_info_role                       |
+| t_otc_user_login_log                       |
+| t_otc_user_subaccount_permission           |
++--------------------------------------------+
+38 rows in set (0.00 sec)
+
+MariaDB [nanhuacapital_web_otc_simulation]> select * from nanhuacapital_web_otc_simulation;
+ERROR 1146 (42S02): Table 'nanhuacapital_web_otc_simulation.nanhuacapital_web_otc_simulation' doesn't exist
+MariaDB [nanhuacapital_web_otc_simulation]> select * from t_otc_user_info_role;
++-----+--------------+---------+
+| id  | user_account | role_id |
++-----+--------------+---------+
+| 169 | YinXiaoyuan  |      35 |
++-----+--------------+---------+
+1 row in set (0.01 sec)
+
+MariaDB [nanhuacapital_web_otc_simulation]> select * from t_otc_role_permission;
+
+
+grant select on `nanhuacapital_web_otc_simulation`.* to 'testzy'@'%' identified by '123456';
+grant select on `testdb`.* to 'testzy'@'%' identified by '123456';
+
+YinXiaoyuan
+yxy123456
+
+mysqldump -h localhost -uroot -p123456  -d database table > /home/zhangyongyong/temp4/table_define.sql
+
+select k.TABLE_SCHEMA,k.DATA_TYPE, k.COLUMN_NAME,k.PRIVILEGES,k.COLUMN_COMMENT from information_schema.COLUMNS k ;
+
+
+MariaDB [nanhuacapital_web_otc_simulation]> select k.TABLE_SCHEMA,k.DATA_TYPE, k.COLUMN_NAME,k.PRIVILEGES,k.COLUMN_COMMENT from information_schema.COLUMNS k where table_schema not in ('information_schema') and table_schema in ('nanhuacapital_web_otc_simulation');
+
+
+create user 'testzy'@'172.29.32.129' identified by '123456';
