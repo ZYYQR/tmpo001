@@ -1,0 +1,9 @@
+   20  git init
+   21  git add
+   22  git commit -m "first"
+   23  git remote add origin https://github.com/ZYYQR/tmpFromPC.git
+   24  git push -u origin master
+   25  git add ./aaatmp/ --all
+   26  git remote add origin https://github.com/ZYYQR/tmpFromPC.git
+   27  git commit -m "s10010101"
+   28  git push -u origin master
