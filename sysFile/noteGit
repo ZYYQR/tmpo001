@@ -1,8 +1,12 @@
 
+新建的
 
 
+
+已存在的
 
 git add . --all
 git commit -m "changeFrom20190510_00_30"
+git push -u origin master
 
-https://github.com/ZYYQR/tmpo001.git
+Usename ZYYQR-pqaz159753
