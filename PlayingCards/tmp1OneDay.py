@@ -43,7 +43,6 @@ print(x)
 import random
 
 sourceKey = ["A", "2","3","4","5","6","7","8","9","J","Q","K"]
-
 sourceColor = ["黑桃", "红桃", "梅花", "方片"]
 
 blackAndOpen1 = ['blackCover', 'openOn']
@@ -84,7 +83,6 @@ def fourUniqueNum():
     # print(' 开始1, fourUniqueNum, 取12组')
     club12 = []
     print('开始分派')
-
     xp = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
           28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
     # print('xp 的属性', type(xp), "开始有的牌\n", xp)
@@ -253,4 +251,3 @@ if __name__ == "__main__":
     movedThePoker(k=v2, xsign=(1, 3))
 
     waterTheSky(k=v3)
-
