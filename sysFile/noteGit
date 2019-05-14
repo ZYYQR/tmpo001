@@ -1,10 +1,9 @@
 
 新建的
 
-
-
 已存在的
 
+''切换到 当前需要提交的目录， tmpo001
 git add . --all
 git commit -m "changeFrom20190510_00_30"
 git push -u origin master
